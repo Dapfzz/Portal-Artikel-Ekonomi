@@ -46,8 +46,9 @@ project-web-jwp/
 ├── artikel_simpan.php
 ├── artikel_detail.php
 └── artikel_hapus.php
-Instalasi
 
+
+Instalasi
 Clone repo ini ke folder htdocs atau www Laragon
 
 bash   git clone https://github.com/username/project-web-jwp.git
