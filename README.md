@@ -1,74 +1,47 @@
-Portal Artikel Ekonomi
+# Portal Artikel Ekonomi
 
-svg
+Aplikasi web portal artikel berbasis **PHP Native** untuk mengelola dan menampilkan artikel ekonomi.
+Dibangun sebagai proyek **Uji Kompetensi Junior Web Programmer (JWP)**.
 
+## Fitur
 
+### Publik
 
-Aplikasi web portal artikel berbasis PHP native untuk mengelola dan menampilkan artikel ekonomi. Dibangun sebagai proyek Uji Kompetensi Junior Web Programmer (JWP).
+* Melihat daftar artikel di halaman utama
+* Membaca detail artikel
+* Mencari artikel berdasarkan judul atau isi
+* Pagination artikel
 
-Fitur
+### Admin
 
-svg
+* Login dan logout admin
+* Dashboard admin
+* Menambahkan artikel
+* Upload gambar artikel
+* Melihat daftar artikel
+* Pagination daftar artikel
+* Menghapus artikel
 
+## Teknologi
 
+* **PHP 7.4+**
+* **MySQL**
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **Laragon** untuk lingkungan pengembangan lokal
 
-Publik (tanpa login)
+## Struktur Project
 
-
-
-Melihat semua artikel di halaman utama
-
-Membaca detail artikel
-
-Pencarian artikel berdasarkan judul atau isi
-
-Pagination artikel
-
-
-
-Admin (dengan login)
-
-
-
-Login/logout admin
-
-Dashboard
-
-Tambah artikel dengan upload gambar
-
-Daftar artikel dengan pagination
-
-Hapus artikel
-
-Teknologi
-
-svg
-
-
-
-PHP 7.4+
-
-MySQL
-
-HTML, CSS, JavaScript
-
-Laragon (lokal)
-
-Struktur Folder
-
-svg
-
+```text
 project-web-jwp/
 ├── assets/
-│   ├── css/style.css
-│   ├── js/script.js
-│   └── images/artikel/
-├── database/
-│   └── db_portal.sql
-├── docs/
-│   └── dokumentasi.md
-├── library/
-│   └── pagination.php
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       └── artikel/
 ├── config.php
 ├── koneksi.php
 ├── index.php
@@ -80,44 +53,87 @@ project-web-jwp/
 ├── artikel_simpan.php
 ├── artikel_detail.php
 └── artikel_hapus.php
+```
 
+> Folder dan file lokal seperti database, dokumentasi, serta library yang tidak diperlukan untuk repository dapat diabaikan melalui `.gitignore`.
 
-svg
+## Instalasi
 
-Instalasi
+### 1. Clone Repository
 
-svg
+Clone repository ke folder `www` pada Laragon:
 
-
-
-Clone repo ini ke folder htdocs atau www Laragon
-
+```bash
 git clone https://github.com/Dapfzz/Portal-Artikel-Ekonomi.git
+```
 
-svg
+Kemudian masuk ke folder project:
 
+```bash
+cd Portal-Artikel-Ekonomi
+```
 
+### 2. Siapkan Database
 
-Import database dari database/db_portal.sql ke phpMyAdmin
+Buat database MySQL untuk project melalui **phpMyAdmin** atau tools database lainnya.
 
-Sesuaikan konfigurasi di config.php dan koneksi.php jika perlu
+Jika tersedia file SQL pada project, import file tersebut ke database yang telah dibuat.
 
-Akses di browser: http://localhost/project-web-jwp
+### 3. Konfigurasi Database
 
-Penggunaan
+Sesuaikan konfigurasi pada `koneksi.php` dengan database lokal yang digunakan:
 
-svg
+```php
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "db_namasiswa";
+```
 
+Sesuaikan `config.php` jika lokasi atau nama folder project berbeda:
 
+```php
+define('BASE_URL', 'http://localhost/project-web-jwp/');
+```
 
-User biasa — langsung buka http://localhost/project-web-jwp
+### 4. Jalankan Project
 
-Admin — klik tombol Login Admin di navbar, masukkan username dan password
+Pastikan **Laragon** dan **MySQL** sedang berjalan.
 
-Unit Kompetensi
+Kemudian buka:
 
-svg
+```text
+http://localhost/project-web-jwp/
+```
 
+## Penggunaan
 
+### User
 
-J.620100.019.02 — Menggunakan library atau komponen pre-existing
+User dapat langsung mengakses halaman utama untuk:
+
+* Melihat artikel
+* Membaca detail artikel
+* Mencari artikel
+* Berpindah halaman menggunakan pagination
+
+### Admin
+
+Admin dapat mengakses halaman login melalui tombol **Login Admin** pada navbar.
+
+Setelah berhasil login, admin dapat:
+
+* Melihat dashboard
+* Menambahkan artikel
+* Mengupload gambar artikel
+* Melihat daftar artikel
+* Menghapus artikel
+* Logout
+
+## Unit Kompetensi
+
+**J.620100.019.02 — Menggunakan library atau komponen pre-existing**
+
+## Pengembangan
+
+Project ini dikembangkan menggunakan PHP Native dan MySQL sebagai bagian dari proses pembelajaran dan pelaksanaan **Uji Kompetensi Junior Web Programmer (JWP)**.
