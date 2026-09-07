@@ -1,0 +1,24 @@
+# Runtime / log
+*.log
+
+# Database lokal
+database/
+*.sql
+
+# Dokumentasi lokal
+docs/
+
+# Library lokal
+library/
+
+# Uploaded images
+assets/images/artikel/*
+!assets/images/artikel/.gitkeep
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
